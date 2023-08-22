@@ -6,15 +6,18 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.core.intPreferencesKey
+import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import java.io.IOException
 
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "lab551_settings")
 val THEME_SETTING = intPreferencesKey("theme_setting")
 val ANALYTICS_SETTING = intPreferencesKey("analytics_setting")
+val APP_UID = stringPreferencesKey("app_uid")
 
 suspend fun Context.setAppTheme(theme: Theme) {
     dataStore.edit { settings ->
@@ -24,6 +27,12 @@ suspend fun Context.setAppTheme(theme: Theme) {
             Theme.PowerSave -> 3
             Theme.System -> 4
         }
+    }
+}
+
+suspend fun Context.setUID(appUID: String) {
+    dataStore.edit { preferences ->
+        preferences[APP_UID] = appUID
     }
 }
 
@@ -55,6 +64,10 @@ fun Context.readTheme(): Flow<Theme> {
                 else -> Theme.Day
             }
         }
+}
+
+suspend fun Context.readUID(): String {
+    return dataStore.data.first()[APP_UID] ?: ""
 }
 
 fun Context.readAnalytics(): Flow<Int> {

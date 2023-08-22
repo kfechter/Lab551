@@ -6,6 +6,8 @@
     <string name="radio_night_mode_text">Dark Theme</string>
     <string name="radio_battery_saver_mode_text">Follow Battery Saver</string>
     <string name="radio_auto_mode_text">Follow System</string>
+    <string name="servicedesc" translatable="false">APDUService</string>
+    <string name="aiddescription" translatable="false">AID Description</string>
     <string name="theme_dialog_title">Set Application Theme</string>
     <string name="opt_in_dialog_title">Analytics Opt-In</string>
     <string name="app_about_action_text">About</string>
@@ -18,5 +20,7 @@
     </string>
     <string name="app_daynight_action_text">Set Day/Night Mode</string>
     <string name="shared_preference_file_name">com.kennethfechter.lab551.prefs</string>
-
+    <string name="nfc_disabled">NFC is disabled. Do you want to enable it?</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
 </resources>
