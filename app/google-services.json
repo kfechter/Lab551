@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "368845627890",
+    "project_id": "lab551",
+    "storage_bucket": "lab551.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368845627890:android:6b1888494f9d358c644b6b",
+        "android_client_info": {
+          "package_name": "com.kennethfechter.lab551"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "368845627890-n08j076gpfc77oj4gj4n4vsit3succim.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBajTHO4Z7-N-mkdc5F5X-P56F6ecAnpDU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "368845627890-n08j076gpfc77oj4gj4n4vsit3succim.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

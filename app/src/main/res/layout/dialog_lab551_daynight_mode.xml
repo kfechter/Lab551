@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RadioGroup
+        android:layout_marginTop="10dp"
+        android:theme="@style/Theme.Lab551"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal">
+        <RadioButton
+            android:id="@+id/radio_day_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_day_mode_text" />
+        <RadioButton
+            android:id="@+id/radio_night_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_night_mode_text" />
+        <RadioButton
+            android:id="@+id/radio_battery_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_battery_saver_mode_text" />
+        <RadioButton
+            android:id="@+id/radio_auto_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_auto_mode_text"
+            android:visibility="gone"/>
+    </RadioGroup>
+</layout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="developer_names">
+        <item>Kenneth Fechter</item>
+    </string-array>
+    <string-array name="developer_profiles">
+        <item>https://www.linkedin.com/in/kafechter/</item>
+    </string-array>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/analytics_opt_status"
+        android:title="@string/app_analytics_action_text"
+        android:icon="@drawable/ic_bug_report_24px"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/day_night_mode"
+        android:title="@string/app_daynight_action_text"
+        android:icon="@drawable/ic_wb_sunny_24px"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/about_application"
+        android:title="@string/app_about_action_text"
+        android:icon="@drawable/ic_baseline_info_24px"
+        app:showAsAction="ifRoom"/>
+</menu>

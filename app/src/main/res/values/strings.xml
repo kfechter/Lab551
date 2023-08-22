@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Lab551</string>
+    <string name="title_activity_nfcactivity">Lab551</string>
+    <string name="build_id_formatter">Lab551 %s</string>
+    <string name="radio_day_mode_text">Light Theme</string>
+    <string name="radio_night_mode_text">Dark Theme</string>
+    <string name="radio_battery_saver_mode_text">Follow Battery Saver</string>
+    <string name="radio_auto_mode_text">Follow System</string>
+    <string name="theme_dialog_title">Set Application Theme</string>
+    <string name="opt_in_dialog_title">Analytics Opt-In</string>
+    <string name="app_about_action_text">About</string>
+    <string name="app_analytics_action_text">Change opt-in Status</string>
+    <string name="opt_in_dialog_message">
+        This app can optionally collect analytics data.
+        This data can be used to help debug and fix crashes and improve the app. You can change
+        your opt-in status at any time by selecting the bug button on the action bar. Once set,
+        changing status requires an application restart.
+    </string>
+    <string name="app_daynight_action_text">Set Day/Night Mode</string>
+    <string name="shared_preference_file_name">com.kennethfechter.lab551.prefs</string>
+
+</resources>
