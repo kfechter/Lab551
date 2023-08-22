@@ -35,5 +35,4 @@
             android:name="firebase_analytics_collection_enabled"
             android:value="false" />
     </application>
-
 </manifest>
