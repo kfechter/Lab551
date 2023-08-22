@@ -1,0 +1,20 @@
+fastlane_version "2.176.0"
+
+default_platform :android
+
+platform :android do
+	desc "Submit a new Build to Google Alpha Channel"
+	lane :alpha do
+	      supply(track: "alpha", apk_paths: ["app/build/outputs/apk/release/app-release.apk"])
+	end
+
+	desc "Promote Alpha Channel to Beta"
+	lane :beta do
+	    supply(track: 'alpha', track_promote_to: 'beta', rollout: '1.0')
+	end
+
+	desc "Promote Beta Channel to Production"
+	lane :prod do
+	      supply(track: 'beta', track_promote_to: 'production', rollout: '1.0')
+	end
+end
