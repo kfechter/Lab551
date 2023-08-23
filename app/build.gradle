@@ -3,7 +3,6 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
-
 }
 
 android {
@@ -17,7 +16,7 @@ android {
 
     defaultConfig {
         applicationId "com.kennethfechter.lab551"
-        minSdk 24
+        minSdk 29
         targetSdk 34
         if(System.getenv("DRONE_BUILD_NUMBER") != null) {
             versionCode = (8 + System.getenv("DRONE_BUILD_NUMBER").toInteger())
