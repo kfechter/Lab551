@@ -23,4 +23,6 @@
     <string name="nfc_disabled">NFC is disabled. Do you want to enable it?</string>
     <string name="dialog_yes">Yes</string>
     <string name="dialog_no">No</string>
+    <string name="content_description">Picture of a key and the NFC logo</string>
+    <string name="nfc_text">Tap phone to HCE Reader</string>
 </resources>
