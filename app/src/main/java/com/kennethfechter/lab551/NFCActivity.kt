@@ -1,5 +1,7 @@
 package com.kennethfechter.lab551
 
+import android.content.Intent
+import android.nfc.NfcAdapter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -14,6 +16,12 @@ import com.kennethfechter.lab551.appcore.Theme
 import com.kennethfechter.lab551.appcore.Utilities
 import com.kennethfechter.lab551.appcore.readAnalytics
 import com.kennethfechter.lab551.appcore.readTheme
+import com.kennethfechter.lab551.appcore.readUID
+import com.kennethfechter.lab551.appcore.setUID
+import com.kennethfechter.lab551.nfcservice.HostCardEmulatorService
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class NFCActivity : AppCompatActivity() {
 
@@ -29,6 +37,21 @@ class NFCActivity : AppCompatActivity() {
 
         initializeAnalytics()
         initializeThemeObserver()
+        checkOrGenerateUID()
+
+
+        if(!Utilities.isRunningTest) {
+            val nfcAdapter = NfcAdapter.getDefaultAdapter(this)
+            if (nfcAdapter != null) {
+                if (!nfcAdapter.isEnabled) {
+                    Dialogs.showNFCDisabledDialog(this@NFCActivity)
+                }
+                else {
+                    val intent = Intent(this, HostCardEmulatorService::class.java) // Build the intent for the service
+                    applicationContext.startForegroundService(intent)
+                }
+            }
+        }
     }
 
     private fun initializeThemeObserver() {
@@ -68,6 +91,14 @@ class NFCActivity : AppCompatActivity() {
     private fun configureAnalytics(analyticsEnabled: Boolean) {
         FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(analyticsEnabled)
         FirebaseAnalytics.getInstance(this@NFCActivity).setAnalyticsCollectionEnabled(analyticsEnabled)
+    }
+
+    private fun checkOrGenerateUID() {
+        CoroutineScope(Dispatchers.IO).launch {
+            if (applicationContext.readUID() == "") {
+                applicationContext.setUID(Utilities.generateID())
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
